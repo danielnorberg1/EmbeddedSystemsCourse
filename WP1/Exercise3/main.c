@@ -27,8 +27,7 @@ fgets(&input, MAX_LENGTH, stdin);
 guess = atoi(&input); 
 
 
-while(timesGuessed < MAX_NUMBER){
-    timesGuessed++;
+while((timesGuessed +1) < MAX_NUMBER){
 
     if ((guess > randomNum) && (guess < 101) && (guess > -1)) {
         printf("Your guess is to high\n");
@@ -44,6 +43,12 @@ while(timesGuessed < MAX_NUMBER){
     printf("Guess a number between 0-100: \n");
     fgets(&input, MAX_LENGTH, stdin);
     guess = atoi(&input); 
+    timesGuessed++;
+
+    if(timesGuessed > 10){
+        printf("Number of guesses exceeded");
+        timesGuessed++;
+    }
 
 }
 
