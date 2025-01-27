@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[]){
 
-
+int numberCharachterShift = atoi(argv[1]);
 
 printf("Please write your sentence: ");
 
@@ -22,12 +22,12 @@ for (int i=0; text[i]; i++){
     printf("%c \n", charachter);
 
     if (charachter >= 'A' && charachter <= 'Z'){
-        
-    }
+        charachter = 'A' + ((charachter - 'A' + numberCharachterShift) % ALPHABET_LENGTH);
 
-    if(charachter >= 'a' && charachter <= 'z'){
-
+     } else if (charachter >= 'a' && charachter <= 'z'){
+        charachter = 'a' + ((charachter - 'a' + numberCharachterShift) % ALPHABET_LENGTH);
     }
+    text[i] = charachter;
 }
 
 
