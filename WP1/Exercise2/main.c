@@ -5,21 +5,20 @@
 #define ALPHABET_LENGTH 26
 #define MAX_LENGTH 100
 
+
 int main(int argc, char *argv[]){
 
 int numberCharachterShift = atoi(argv[1]);
-
-printf("Please write your sentence: ");
-
 char text[MAX_LENGTH];
 
-fgets(text, MAX_LENGTH, stdin);
+printf("Please write your sentence: \n");
 
-printf("%s \n", text);
+while (fgets(text, MAX_LENGTH, stdin)) {
+
+printf("Please write your sentence: \n");
 
 for (int i=0; text[i]; i++){
     char charachter = text[i];
-    printf("%c \n", charachter);
 
     if (charachter >= 'A' && charachter <= 'Z'){
         charachter = 'A' + ((charachter - 'A' + numberCharachterShift) % ALPHABET_LENGTH);
@@ -31,7 +30,9 @@ for (int i=0; text[i]; i++){
 }
 
 
+printf("%s \n", text);
 
+}
 
 return 0;
 
