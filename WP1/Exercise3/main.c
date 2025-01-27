@@ -9,7 +9,10 @@
 
 int main(){
 srand(time(NULL));
+char answer;
+char cpyAnswer;
 
+while(1){
 
 
 int randomNum = rand() % 101;
@@ -44,7 +47,16 @@ while(timesGuessed < MAX_NUMBER){
 
 }
 
+printf("Type any button too play again or press 2 to finish: \n");
 
+fgets(&answer, 2, stdin);
+cpyAnswer = atoi(&answer);
+
+if (cpyAnswer == 2){
+    return 0;
+} 
+
+}
 
 
 
