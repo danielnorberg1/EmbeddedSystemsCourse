@@ -14,7 +14,6 @@ void create_random(int *tab ) {
     for (int i=0; i <MAX; i++){
         tab[i] = rand() % MAXNUMBER;
     }
-    
 }
 
 
@@ -37,7 +36,20 @@ void count_frequency(int *tab, int *freq ){
 
 // This function takes the frequency count table
 // and draws a histogram of the values in that frequency table
-void draw_histogram(int *freq );
+void draw_histogram(int *freq ){
+
+    for (int i= 0; i < MAXNUMBER; i++){
+        if (freq[i] > 0){
+            printf("%d   ", i);
+            for (int j = 0; j< freq[i]; j++){
+            printf("x");
+            }
+        printf("\n");
+        }
+
+    }
+}
+
 // ------ Function definitions ----------
 // ------ Main --------------------------
 // The main entry point for the program
@@ -53,12 +65,26 @@ int table[MAX], n ;
 int frequency[MAXNUMBER];
 
 create_random(table);
+
+ printf("Generated Random Numbers:\n");
+    for (int i = 0; i < MAX; i++) {
+        printf("%d ", table[i]);
+        if ((i + 1) % 10 == 0) { // Print a newline every 10 numbers for readability
+            printf("\n");
+        }
+    }
+    printf("\n");
+
 count_frequency(table, frequency);
+draw_histogram(table);
 
 printf("%d", table);
 
 return 0;
 
 }
+
+
+
 
 
