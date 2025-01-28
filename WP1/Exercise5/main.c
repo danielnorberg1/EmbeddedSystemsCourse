@@ -7,16 +7,21 @@
 #define MAXNUMBER 20 // Defines the maximum value of random numbers
 
 
+
 // This function generates a set of random numbers
 // and fills the table *tab with these numbers
-void create_random(int *tab );
+void create_random(int *tab ) {
+    for (int i=0; i <MAX; i++){
+        tab[i] = rand() % MAXNUMBER;
+    }
+    
+}
 
 
 
 // This function takes the *tab of random numbers
 // and creates a table with the frequency counts for these numbers
 void count_frequency(int *tab, int *freq );
-
 
 // This function takes the frequency count table
 // and draws a histogram of the values in that frequency table
@@ -28,9 +33,18 @@ void draw_histogram(int *freq );
 // If you choose to go for the optional part
 // Please modify it accordingly
 int main (void){
+srand(time(NULL));
+
+
 
 int table[MAX], n ;
-
-
 int frequency[MAXNUMBER];
+
+create_random(table);
+
+printf("%d", table);
+
+return 0;
+
 }
+
