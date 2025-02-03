@@ -10,9 +10,10 @@ printf("Input the size: \n");
 
 scanf("%i%i", &depthOfMatrices, &widthOfMatrices);
 
-
-
-
+if ((depthOfMatrices == 1) && (widthOfMatrices == 1) ){
+    printf("invalid");
+    return 0;
+}
 
 int matrix1[depthOfMatrices][widthOfMatrices]; 
 int matrix2[depthOfMatrices][widthOfMatrices]; 
@@ -24,16 +25,22 @@ int j;
 printf("Input elements of matrix 1: \n");
 for (i = 0; i < depthOfMatrices; i++) {
     for (j = 0; j < widthOfMatrices; j++){
-    scanf("%i", &matrix1[i][j]);
+    if ((scanf("%i", &matrix1[i][j])) != 1){
+        printf("invalid\n");
+        return 0;
+    }
     }
 }
 
-
 printf("Input elements of matrix 2: \n");
+
 for (i = 0; i < depthOfMatrices; i++) {
     for (j = 0; j < widthOfMatrices; j++){
-    scanf("%i", &matrix2[i][j]);
-    
+    if ((scanf("%i", &matrix2[i][j])) != 1){
+        printf("invalid\n");
+        return 0;
+    }
+
     }
 }
 
@@ -43,7 +50,7 @@ for (i = 0; i < depthOfMatrices; i++){
     sumOfMatrices[i][j] = (matrix1[i][j] + matrix2[i][j]); 
     printf("%d\n", sumOfMatrices[i][j]);
     }
-
+    
 }
 
 
