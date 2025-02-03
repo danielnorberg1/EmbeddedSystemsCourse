@@ -48,9 +48,9 @@ printf("The sum is: \n");
 for (i = 0; i < depthOfMatrices; i++){
     for(j = 0; j < widthOfMatrices; j++){
     sumOfMatrices[i][j] = (matrix1[i][j] + matrix2[i][j]); 
-    printf("%d\n", sumOfMatrices[i][j]);
+    printf("%d ", sumOfMatrices[i][j]);
     }
-    
+    printf("\n");
 }
 
 
