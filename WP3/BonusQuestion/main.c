@@ -1,5 +1,6 @@
 #include <stdio.h> // Includes necessary libraries
 #include <string.h>
+#include <stdlib.h>
 
 
 int main(){
@@ -15,9 +16,16 @@ if ((depthOfMatrices == 1) && (widthOfMatrices == 1) ){
     return 0;
 }
 
-int matrix1[depthOfMatrices][widthOfMatrices]; 
-int matrix2[depthOfMatrices][widthOfMatrices]; 
-int sumOfMatrices[depthOfMatrices][widthOfMatrices];
+
+
+int **matrix1 = (int **)malloc(depthOfMatrices * sizeof(int *));
+int **matrix2 = (int **)malloc(depthOfMatrices * sizeof(int *));
+int **sumOfMatrices = (int **)malloc(depthOfMatrices * sizeof(int *));
+for (int i = 0; i < depthOfMatrices; i++){
+    matrix1[i] = (int *)malloc(widthOfMatrices * sizeof(int));
+    matrix2[i] = (int *)malloc(widthOfMatrices * sizeof(int));
+    sumOfMatrices[i] = (int *)malloc(widthOfMatrices * sizeof(int));
+}
 
 int i;
 int j;
