@@ -1,27 +1,33 @@
-#include <stdio.h>
+#include <stdio.h> // Include necessary libraries
 #include <string.h>
 
-#define MAX_SENTENCES 5
-#define MAX_CHARACTHERS 31
+#define MAX_SENTENCES 5 // Sets number 5 as the number of maximum of sentences
+#define MAX_CHARACTHERS 31 // Sets 31 as the maximum number of charachters
 
+// Function to clear the buffer
 void clearstdin(void)
 {
-    char lastChar;
-    while ((lastChar = getchar()) != '\n' && lastChar != EOF);
+    char lastChar; // Initialize lastChar to hold the charachter that comes from getChar()
+    while ((lastChar = getchar()) != '\n' && lastChar != EOF); // Gets the characchters from the input buffer until it reaches \n and the lastChar is not end of file.
 }
+
+
 
 int main()
 {
-    char sentences[MAX_SENTENCES][MAX_CHARACTHERS];
+    char sentences[MAX_SENTENCES][MAX_CHARACTHERS]; // Initialize the multi array
+    // Initialize loop variables
     int i = 0;
     int j = 0;
 
+    // The loop iterates though every position in sentences an uses fgets
+    // and saves it to the position i.
     for (i = 0; i < MAX_SENTENCES; i++)
     {
 
-        fgets(sentences[i], MAX_CHARACTHERS, stdin);
+        fgets(sentences[i], MAX_CHARACTHERS, stdin); // gets user input and stores it in sentences array at position i.
 
-        char *end = strchr(sentences[i], '\n');
+        char *end = strchr(sentences[i], '\n'); // strchr() searches for the first time \n is found in sentences[i] and uses *end as the pointer to it.
         if (end)
         {
             *end = '\0';
