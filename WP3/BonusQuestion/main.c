@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MAX_SIZE 4 // Defines the max size integer for the matrices
+
+
 // This program will use pointers to initialize three matrices
 // Two of which will hold user input and one that will hold the sum of these
 // First the user chooses the size of the matrices, then enter the input for matrix1 
@@ -15,9 +18,10 @@ printf("Input the size: \n"); // Pomts the user to input the size
 // Takes user inout and stores in the initialized variables
 scanf("%i%i", &depthOfMatrices, &widthOfMatrices);
 
-// If the input for the width and depth of the matrix is 1 and 1
+// If the input for the width and depth of the matrix is 1 and 1 or
+// th input of the user makes the matrix bigger than 4x4
 // The system will stop and output invalid.
-if ((depthOfMatrices == 1) && (widthOfMatrices == 1) ){
+if (((depthOfMatrices == 1) && (widthOfMatrices == 1)) || (depthOfMatrices > MAX_SIZE || widthOfMatrices > MAX_SIZE)){
     printf("invalid");
     return 0;
 }
