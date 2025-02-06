@@ -22,7 +22,7 @@ scanf("%i%i", &depthOfMatrices, &widthOfMatrices);
 // th input of the user makes the matrix bigger than 4x4
 // The system will stop and output invalid.
 if (((depthOfMatrices == 1) && (widthOfMatrices == 1)) || (depthOfMatrices > MAX_SIZE || widthOfMatrices > MAX_SIZE)){
-    printf("invalid");
+    printf("invalid\n");
     return 0;
 }
 
