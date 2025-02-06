@@ -8,7 +8,12 @@
 // This program will use pointers to initialize three matrices
 // Two of which will hold user input and one that will hold the sum of these
 // First the user chooses the size of the matrices, then enter the input for matrix1 
-// and then matrix2. After this the program will then print out 
+// and then matrix2. Then the porgram will print out
+// The value that each matrix hold at every possition and lastly free the
+// allocated memory in the end.
+// The program also checks that there cannot be a matrix the size of 1x1 and max 4x4, that the
+// input of the matrixes always equals the number of the size and that there
+// are only integers in the matrix.
 int main(){
 
 int depthOfMatrices, widthOfMatrices; // Initialize variables to store the matrix
@@ -30,12 +35,7 @@ if (((depthOfMatrices == 1) && (widthOfMatrices == 1)) || (depthOfMatrices > MAX
 // Here we initialize the matrices that is allocated using the heap.
 // The usage of pointers to pointers ensures us that matrix1 for example
 // points to the integer that will point to the integer that hold a the value.
-// So that it becomes two dimentional. Then the porgram will print out
-// The value that each matrix hold at every possition and lastly free the
-// allocated memory in the end.
-// The program also checks that there cannot be a matrix the size of 1x1, that the
-// input of the matrixes always equals the number of the size and that there
-// are only integers in the matrix.
+// So that it becomes two dimentional. 
 int **matrix1 = (int **)malloc(depthOfMatrices * sizeof(int *));
 int **matrix2 = (int **)malloc(depthOfMatrices * sizeof(int *));
 // This is used to store the sum of the matrices
