@@ -19,8 +19,9 @@ typedef struct
     enum DIRECTION dir;
 } ROBOT;
 
-void move(char * xpos)
+void move(char  xpos)
 {
+
 }
 
 void turn(char * xpos)
