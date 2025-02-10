@@ -4,35 +4,55 @@
 
 
 // Initialize enum for the direction of the robot.
-enum DIRECTION
-{
+enum DIRECTION{
     N,
     O,
     S,
     W
 };
 
-typedef struct
-{
+typedef struct{
     int xpos;
     int ypos;
     enum DIRECTION dir;
 } ROBOT;
 
-void move(char  xpos)
-{
-
+void move(ROBOT *robot){
+   switch (robot->dir){
+    case N:
+        if (robot->ypos < 99){
+            robot->ypos++;
+        }
+        break;
+    case O: 
+        if (robot->xpos < 99){
+            robot->xpos++;
+        }
+        break;
+    case S:
+        if (robot->ypos > 0){
+            robot->ypos--;
+        }
+        break;
+    case W:
+        if (robot->xpos > 0){
+            robot->xpos--;
+        }
+        break;
+   }
 }
 
-void turn(char * xpos)
-{
+void turn(ROBOT *robot){
+robot->dir = (robot->dir + 1) % 4;
 }
 
 int main()
 {
-
     ROBOT myRobot;
     char input;
+    myRobot.dir = "N";
+
+
 
     printf("Enter starting possition x, y: ");
 
@@ -54,6 +74,8 @@ int main()
         scanf("%c", &input);
         printf("Please enter m or t");
     }
+
+    
 
     return 0;
 }
