@@ -13,8 +13,6 @@
 * permutations.
 */
 
-
-
 // This function is a standard swapper function
 void swap(char *a, char *b){ // It takes two pointer charachters
     char temp = *a; // stores the first pointer into a temp holder
@@ -53,9 +51,7 @@ void permutate(char *input, int startingPos, int endPos, int *count, char **perm
 
         }
     }
-
 }
-
 
 
 int main(int argc, char * argv[]){
@@ -71,8 +67,6 @@ int main(int argc, char * argv[]){
         printf("invalid");
         return 0;
     }
-
-    
 
     int factorial = 1; // Initialize the factorial integer
     char *input = argv[1]; // initialize input that points to the first argument
@@ -112,7 +106,3 @@ int main(int argc, char * argv[]){
 
     return 0; // Returns 0 if the program ran successfully
 }
-
-
-
-
