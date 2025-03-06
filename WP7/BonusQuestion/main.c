@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // Include necessary libraries
 #include <stdlib.h>
 
 // Defines the node for the linked list
